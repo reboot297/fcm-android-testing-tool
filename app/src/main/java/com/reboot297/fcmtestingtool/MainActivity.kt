@@ -27,10 +27,12 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.reboot297.fcmtestingtool.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * Main activity in the application.
  */
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration

@@ -21,16 +21,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.reboot297.fcmtestingtool.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * Home screen. Display list of received messages.
  */
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,9 +47,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val homeViewModel =
-            ViewModelProvider(this)[HomeViewModel::class.java]
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        viewModel.text.observe(viewLifecycleOwner) {
             binding.textHome.text = it
         }
     }

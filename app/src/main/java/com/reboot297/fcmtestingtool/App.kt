@@ -14,22 +14,13 @@
  * limitations under the License.
  */
 
-package com.reboot297.fcmtestingtool.ui.home
+package com.reboot297.fcmtestingtool
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
 /**
- * ViewModel for Home screen.
+ * Application class.
  */
-@HiltViewModel
-class HomeViewModel @Inject constructor() : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
-    }
-    val text: LiveData<String> = _text
-}
+@HiltAndroidApp
+class App : Application()
