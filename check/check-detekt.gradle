@@ -1,0 +1,19 @@
+detekt {
+    buildUponDefaultConfig = true // preconfigure defaults
+    allRules = true // activate all available (even unstable) rules.
+    //config = files("${project.rootDir}/check/rules-detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
+    baseline = file("$projectDir/config/baseline.xml") // a way of suppressing issues before introducing detekt
+
+    reports {
+        txt.enabled = true // similar to the console output, contains issue signature to manually edit baseline files
+        sarif.enabled = true // standardized SARIF format (https://sarifweb.azurewebsites.net/) to support integrations with Github Code Scanning
+        html {
+            enabled = true
+            destination = file("${project.rootDir}/build_results/detekt.html")
+        }
+    }
+}
+
+dependencies {
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.18.0")
+}

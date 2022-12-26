@@ -4,10 +4,12 @@ plugins {
     id 'com.google.gms.google-services'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
+    id 'io.gitlab.arturbosch.detekt' version '1.18.0'
 }
 
 apply from: "$project.rootDir/check/check-lint.gradle"
 apply from: "$project.rootDir/check/check-ktlint.gradle"
+apply from: "$project.rootDir/check/check-detekt.gradle"
 
 android {
     namespace 'com.reboot297.fcmtestingtool'
