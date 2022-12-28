@@ -70,4 +70,12 @@
         <item name="android:layout_marginBottom">8dp</item>
     </style>
 
+    <style name="AppTheme.FCM.Info.Label" parent="AppTheme.Base.Label">
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="AppTheme.FCM.Info.Value" parent="AppTheme.Base.Value">
+        <item name="android:textSize">18sp</item>
+    </style>
+
 </resources>

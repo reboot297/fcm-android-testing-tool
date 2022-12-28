@@ -23,6 +23,7 @@
     <string name="action_about">About</string>
 
     <string name="menu_home">Home</string>
+    <string name="menu_fcm_info">FCM Info</string>
     <string name="menu_about">About…</string>
 
     <string name="about_app_version_label">Version:</string>
@@ -35,5 +36,14 @@
     <string name="about_license_label">Licence:</string>
     <string name="about_license_value" translatable="false">https://github.com/reboot297/fcm-android-testing-tool/blob/main/LICENSE</string>
     <string name="about_description_value">This application is designed to check if you have received FCM notifications. To test FCM for your application, compile the source code from github with your "package name" and "google-services.json" file and install the apk on the device.</string>
+
+    <string name="fcm_info_registration_token_label">Registration Token:</string>
+    <string name="fcm_info_project_id">Project Id:</string>
+    <string name="fcm_info_google_storage_bucket">Google storage bucket:</string>
+    <string name="fcm_info_google_app_id">Google App ID:</string>
+    <string name="fcm_info_google_api_key">Google API Key:</string>
+    <string name="fcm_info_google_crash_reporting_api_key">Google crash reporting api key:</string>
+    <string name="fcm_info_gcm_default_sender_id">GCM default sender id:</string>
+    <string name="fcm_info_default_web_client_id">Default web client id:</string>
 
 </resources>

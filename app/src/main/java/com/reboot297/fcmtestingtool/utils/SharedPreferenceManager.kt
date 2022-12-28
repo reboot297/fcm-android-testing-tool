@@ -31,14 +31,16 @@ class SharedPreferenceManager @Inject constructor(
 ) {
 
     private fun getSharedPreferences() =
-        applicationContext.getSharedPreferences("token", Context.MODE_PRIVATE)
+        applicationContext.getSharedPreferences(FCM_PREFERENCE_NAME, Context.MODE_PRIVATE)
 
     /**
      * Save fcm token to the storage.
      */
     fun saveToken(token: String) {
-        getSharedPreferences().edit().putString("token", token).apply()
+        getSharedPreferences().edit().putString(KEY_FCM_TOKEN, token).apply()
     }
+
+    fun getToken() = getSharedPreferences().getString(KEY_FCM_TOKEN, null)
 
     /**
      * Register listener for shared preference.
@@ -52,5 +54,10 @@ class SharedPreferenceManager @Inject constructor(
      */
     fun unRegisterListener(listener: OnSharedPreferenceChangeListener) {
         getSharedPreferences().unregisterOnSharedPreferenceChangeListener(listener)
+    }
+
+    companion object {
+        const val KEY_FCM_TOKEN = "fcm_token"
+        const val FCM_PREFERENCE_NAME = "fcm_preference"
     }
 }
