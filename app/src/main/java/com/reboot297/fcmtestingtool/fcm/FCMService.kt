@@ -14,24 +14,29 @@
  * limitations under the License.
  */
 
-package com.reboot297.fcmtestingtool
+package com.reboot297.fcmtestingtool.fcm
 
-import android.app.Application
-import com.reboot297.fcmtestingtool.fcm.FCMDataManager
-import dagger.hilt.android.HiltAndroidApp
+import android.util.Log
+import com.google.firebase.messaging.FirebaseMessagingService
+import com.reboot297.fcmtestingtool.utils.SharedPreferenceManager
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 /**
- * Application class.
+ * Service to listen fcm messages.
  */
-@HiltAndroidApp
-class App : Application() {
+@AndroidEntryPoint
+class FCMService : FirebaseMessagingService() {
 
     @Inject
-    lateinit var fcmDataManager: FCMDataManager
+    lateinit var sharedPreferenceManager: SharedPreferenceManager
 
-    override fun onCreate() {
-        super.onCreate()
-        fcmDataManager.getFCMToken()
+    /**
+     * Listen updates for FCM token.
+     */
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+        Log.d("FCM", "Updated token: $token")
+        sharedPreferenceManager.saveToken(token)
     }
 }
