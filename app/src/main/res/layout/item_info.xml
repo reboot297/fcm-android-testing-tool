@@ -24,21 +24,21 @@
 
     <TextView
         android:id="@+id/labelView"
-        style="@style/AppTheme.FCM.Info.Label"
+        style="@style/AppTheme.Info.Label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="label" />
 
     <TextView
         android:id="@+id/valueView"
-        style="@style/AppTheme.FCM.Info.Value"
+        style="@style/AppTheme.Info.Value"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelView"
         tools:text="Value" />
 
     <TextView
         android:id="@+id/descriptionView"
-        style="@style/AppTheme.FCM.Info.Description"
+        style="@style/AppTheme.Info.Description"
         android:layout_marginTop="8dp"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +49,7 @@
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_baseline_share"
         app:layout_constraintEnd_toStartOf="@+id/expandView"
         app:layout_constraintTop_toBottomOf="@+id/descriptionView"

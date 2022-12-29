@@ -41,8 +41,10 @@ class IntentUtils @Inject constructor(
             type = "text/plain"
         }
 
-        context.startActivity(Intent.createChooser(sendIntent, null).apply {
-            addFlags(FLAG_ACTIVITY_NEW_TASK)
-        })
+        context.startActivity(
+            Intent.createChooser(sendIntent, null).apply {
+                addFlags(FLAG_ACTIVITY_NEW_TASK)
+            }
+        )
     }
 }

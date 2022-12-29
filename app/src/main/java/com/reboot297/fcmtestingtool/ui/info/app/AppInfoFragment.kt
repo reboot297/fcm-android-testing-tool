@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.reboot297.fcmtestingtool.ui.info.fcm
+package com.reboot297.fcmtestingtool.ui.info.app
 
 import android.os.Bundle
 import android.view.View
@@ -23,12 +23,11 @@ import com.reboot297.fcmtestingtool.ui.info.base.BaseInfoFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
- * Screen with information about fcm project.
- * The data displayed on this screen collected from Firebase console.
+ * Display settings info about the application.
  */
 @AndroidEntryPoint
-class FCMInfoFragment : BaseInfoFragment() {
-    private val viewModel: FCMInfoViewModel by viewModels()
+class AppInfoFragment : BaseInfoFragment() {
+    private val viewModel: AppInfoViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

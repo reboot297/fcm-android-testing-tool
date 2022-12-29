@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.reboot297.fcmtestingtool.ui.info
+package com.reboot297.fcmtestingtool.ui.info.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -63,7 +63,7 @@ class InfoAdapter @Inject constructor(
 }
 
 /**
- * ViewHolder for FCM Info item.
+ * ViewHolder for Info item.
  */
 class InfoViewHolder(val binding: ItemInfoBinding) : RecyclerView.ViewHolder(binding.root) {
     fun onClickExpand() = with(binding) {

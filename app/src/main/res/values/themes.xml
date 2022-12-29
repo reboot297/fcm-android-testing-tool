@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.FCMTestingTool" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
@@ -70,15 +70,15 @@
         <item name="android:layout_marginBottom">8dp</item>
     </style>
 
-    <style name="AppTheme.FCM.Info.Label" parent="AppTheme.Base.Label">
+    <style name="AppTheme.Info.Label" parent="AppTheme.Base.Label">
         <item name="android:layout_marginTop">8dp</item>
     </style>
 
-    <style name="AppTheme.FCM.Info.Value" parent="AppTheme.Base.Value">
+    <style name="AppTheme.Info.Value" parent="AppTheme.Base.Value">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="AppTheme.FCM.Info.Description" parent="AppTheme.Base.Value">
+    <style name="AppTheme.Info.Description" parent="AppTheme.Base.Value">
         <item name="android:textSize">16sp</item>
     </style>
 

@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package com.reboot297.fcmtestingtool.ui.info
+package com.reboot297.fcmtestingtool.ui.info.base
 
-import androidx.annotation.StringRes
+import androidx.recyclerview.widget.DiffUtil
 
 /**
- * Model to display info items on UI.
- *
- * @param label label for the field
- * @param value value of the field, It can be string resource or string
- * @param description description of the field
+ * DiffCallback for Info items.
  */
-data class InfoItem(@StringRes val label: Int, val value: Any, @StringRes val description: Int)
+class InfoDiffCallback : DiffUtil.ItemCallback<InfoItem>() {
+    override fun areItemsTheSame(oldItem: InfoItem, newItem: InfoItem) =
+        oldItem.value == newItem.value
+
+    override fun areContentsTheSame(oldItem: InfoItem, newItem: InfoItem) = oldItem == newItem
+}

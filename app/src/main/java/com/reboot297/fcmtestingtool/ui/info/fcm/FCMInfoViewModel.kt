@@ -17,15 +17,11 @@
 package com.reboot297.fcmtestingtool.ui.info.fcm
 
 import android.content.SharedPreferences
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.reboot297.fcmtestingtool.R
-import com.reboot297.fcmtestingtool.ui.info.InfoItem
+import com.reboot297.fcmtestingtool.ui.info.base.BaseInfoViewModel
+import com.reboot297.fcmtestingtool.ui.info.base.InfoItem
 import com.reboot297.fcmtestingtool.utils.SharedPreferenceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
@@ -34,10 +30,7 @@ import javax.inject.Inject
 @HiltViewModel
 class FCMInfoViewModel @Inject constructor(
     private val sharedPreferenceManager: SharedPreferenceManager,
-) : ViewModel(), SharedPreferences.OnSharedPreferenceChangeListener {
-
-    private val _itemsLiveData = MutableLiveData<List<InfoItem>>()
-    val itemsLiveData: LiveData<List<InfoItem>> = _itemsLiveData
+) : BaseInfoViewModel(), SharedPreferences.OnSharedPreferenceChangeListener {
 
     init {
         sharedPreferenceManager.registerListener(this)
@@ -53,18 +46,9 @@ class FCMInfoViewModel @Inject constructor(
     }
 
     /**
-     * Reload list of items.
-     */
-    fun loadItems() {
-        viewModelScope.launch {
-            _itemsLiveData.postValue(fcmFields())
-        }
-    }
-
-    /**
      * Generate list of items.
      */
-    private fun fcmFields() = listOf(
+    override fun generateFields() = listOf(
         InfoItem(
             R.string.fcm_info_label_registration_token,
             sharedPreferenceManager.getToken() ?: "",
