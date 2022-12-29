@@ -22,11 +22,15 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.reboot297.fcmtestingtool.databinding.ItemInfoBinding
+import com.reboot297.fcmtestingtool.utils.IntentUtils
+import javax.inject.Inject
 
 /**
  * Adapter to display info items.
  */
-class InfoAdapter : ListAdapter<InfoItem, InfoViewHolder>(InfoDiffCallback()) {
+class InfoAdapter @Inject constructor(
+    private val intentUtils: IntentUtils
+) : ListAdapter<InfoItem, InfoViewHolder>(InfoDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InfoViewHolder {
         return InfoViewHolder(
@@ -41,17 +45,18 @@ class InfoAdapter : ListAdapter<InfoItem, InfoViewHolder>(InfoDiffCallback()) {
     override fun onBindViewHolder(holder: InfoViewHolder, position: Int) {
         val item = getItem(position)
         with(holder.binding) {
-            labelView.text = root.context.getString(item.label)
-            valueView.text = when (item.value) {
+            val value = when (item.value) {
                 is Int -> root.context.getString(item.value)
                 is String -> item.value.toString()
                 else -> ""
             }
+            labelView.text = root.context.getString(item.label)
+            valueView.text = value
             descriptionView.text = root.context.getString(item.description)
-            root.setOnClickListener {
-                val expanded = descriptionView.isVisible
-                descriptionView.isVisible = !expanded
-                expandView.isChecked = !expanded
+            root.setOnClickListener { holder.onClickExpand() }
+
+            shareView.setOnClickListener {
+                intentUtils.shareText(value)
             }
         }
     }
@@ -60,4 +65,11 @@ class InfoAdapter : ListAdapter<InfoItem, InfoViewHolder>(InfoDiffCallback()) {
 /**
  * ViewHolder for FCM Info item.
  */
-class InfoViewHolder(val binding: ItemInfoBinding) : RecyclerView.ViewHolder(binding.root)
+class InfoViewHolder(val binding: ItemInfoBinding) : RecyclerView.ViewHolder(binding.root) {
+    fun onClickExpand() = with(binding) {
+        val shouldExpand = !descriptionView.isVisible
+        descriptionView.isVisible = shouldExpand
+        expandView.isChecked = shouldExpand
+        shareView.isVisible = shouldExpand
+    }
+}

@@ -37,6 +37,8 @@
     <string name="about_license_value" translatable="false">https://github.com/reboot297/fcm-android-testing-tool/blob/main/LICENSE</string>
     <string name="about_description_value">This application is designed to check if you have received FCM notifications. To test FCM for your application, compile the source code from github with your "package name" and "google-services.json" file and install the apk on the device.</string>
 
+    <string name="content_description_share">Share</string>
+
     <string name="fcm_info_label_registration_token">Registration Token:</string>
     <string name="fcm_info_description_registration_token"></string>
 

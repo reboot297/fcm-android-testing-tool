@@ -25,6 +25,7 @@ import androidx.fragment.app.viewModels
 import com.reboot297.fcmtestingtool.databinding.FragmentFcmInfoBinding
 import com.reboot297.fcmtestingtool.ui.info.InfoAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 /**
  * Screen with information about fcm project.
@@ -36,7 +37,8 @@ class FCMInfoFragment : Fragment() {
     private val binding: FragmentFcmInfoBinding get() = _binding!!
 
     private val viewModel: FCMInfoViewModel by viewModels()
-    private val adapter = InfoAdapter()
+    @Inject
+    lateinit var adapter: InfoAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
