@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.reboot297.fcmtestingtool.ui.info.fcm
+package com.reboot297.fcmtestingtool.ui.info
 
 import androidx.recyclerview.widget.DiffUtil
 
 /**
- * DiffCallback for FCM Info items.
+ * DiffCallback for Info items.
  */
-class FCMInfoDiffCallback : DiffUtil.ItemCallback<FCMInfo>() {
-    override fun areItemsTheSame(oldItem: FCMInfo, newItem: FCMInfo) =
+class InfoDiffCallback : DiffUtil.ItemCallback<InfoItem>() {
+    override fun areItemsTheSame(oldItem: InfoItem, newItem: InfoItem) =
         oldItem.value == newItem.value
 
-    override fun areContentsTheSame(oldItem: FCMInfo, newItem: FCMInfo) = oldItem == newItem
+    override fun areContentsTheSame(oldItem: InfoItem, newItem: InfoItem) = oldItem == newItem
 }

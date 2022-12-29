@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-package com.reboot297.fcmtestingtool.ui.info.fcm
+package com.reboot297.fcmtestingtool.ui.info
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.reboot297.fcmtestingtool.databinding.ItemFcmInfoBinding
+import com.reboot297.fcmtestingtool.databinding.ItemInfoBinding
 
 /**
- * Adapter to display FCM messages.
+ * Adapter to display info items.
  */
-class FCMInfoAdapter : ListAdapter<FCMInfo, FCMInfoViewHolder>(FCMInfoDiffCallback()) {
+class InfoAdapter : ListAdapter<InfoItem, InfoViewHolder>(InfoDiffCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FCMInfoViewHolder {
-        return FCMInfoViewHolder(
-            ItemFcmInfoBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InfoViewHolder {
+        return InfoViewHolder(
+            ItemInfoBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -37,7 +38,7 @@ class FCMInfoAdapter : ListAdapter<FCMInfo, FCMInfoViewHolder>(FCMInfoDiffCallba
         )
     }
 
-    override fun onBindViewHolder(holder: FCMInfoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: InfoViewHolder, position: Int) {
         val item = getItem(position)
         with(holder.binding) {
             labelView.text = root.context.getString(item.label)
@@ -46,6 +47,12 @@ class FCMInfoAdapter : ListAdapter<FCMInfo, FCMInfoViewHolder>(FCMInfoDiffCallba
                 is String -> item.value.toString()
                 else -> ""
             }
+            descriptionView.text = root.context.getString(item.description)
+            root.setOnClickListener {
+                val expanded = descriptionView.isVisible
+                descriptionView.isVisible = !expanded
+                expandView.isChecked = !expanded
+            }
         }
     }
 }
@@ -53,4 +60,4 @@ class FCMInfoAdapter : ListAdapter<FCMInfo, FCMInfoViewHolder>(FCMInfoDiffCallba
 /**
  * ViewHolder for FCM Info item.
  */
-class FCMInfoViewHolder(val binding: ItemFcmInfoBinding) : RecyclerView.ViewHolder(binding.root)
+class InfoViewHolder(val binding: ItemInfoBinding) : RecyclerView.ViewHolder(binding.root)

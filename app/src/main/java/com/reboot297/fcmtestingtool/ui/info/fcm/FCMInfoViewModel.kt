@@ -22,6 +22,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.reboot297.fcmtestingtool.R
+import com.reboot297.fcmtestingtool.ui.info.InfoItem
 import com.reboot297.fcmtestingtool.utils.SharedPreferenceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -35,8 +36,8 @@ class FCMInfoViewModel @Inject constructor(
     private val sharedPreferenceManager: SharedPreferenceManager,
 ) : ViewModel(), SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private val _itemsLiveData = MutableLiveData<List<FCMInfo>>()
-    val itemsLiveData: LiveData<List<FCMInfo>> = _itemsLiveData
+    private val _itemsLiveData = MutableLiveData<List<InfoItem>>()
+    val itemsLiveData: LiveData<List<InfoItem>> = _itemsLiveData
 
     init {
         sharedPreferenceManager.registerListener(this)
@@ -64,20 +65,46 @@ class FCMInfoViewModel @Inject constructor(
      * Generate list of items.
      */
     private fun fcmFields() = listOf(
-        FCMInfo(
-            R.string.fcm_info_registration_token_label,
-            sharedPreferenceManager.getToken() ?: ""
+        InfoItem(
+            R.string.fcm_info_label_registration_token,
+            sharedPreferenceManager.getToken() ?: "",
+            R.string.fcm_info_description_registration_token
         ),
-        FCMInfo(R.string.fcm_info_project_id, R.string.project_id),
-        FCMInfo(R.string.fcm_info_google_storage_bucket, R.string.google_storage_bucket),
-        FCMInfo(R.string.fcm_info_google_app_id, R.string.google_app_id),
-        FCMInfo(R.string.fcm_info_google_api_key, R.string.google_api_key),
-        FCMInfo(
-            R.string.fcm_info_google_crash_reporting_api_key,
-            R.string.google_crash_reporting_api_key
+        InfoItem(
+            R.string.fcm_info_label_project_id,
+            R.string.project_id,
+            R.string.fcm_info_description_project_id
         ),
-        FCMInfo(R.string.fcm_info_gcm_default_sender_id, R.string.gcm_defaultSenderId),
-        FCMInfo(R.string.fcm_info_default_web_client_id, R.string.default_web_client_id)
+        InfoItem(
+            R.string.fcm_info_label_google_storage_bucket,
+            R.string.google_storage_bucket,
+            R.string.fcm_info_description_google_storage_bucket
+        ),
+        InfoItem(
+            R.string.fcm_info_label_google_app_id,
+            R.string.google_app_id,
+            R.string.fcm_info_description_google_app_id
+        ),
+        InfoItem(
+            R.string.fcm_info_label_google_api_key,
+            R.string.google_api_key,
+            R.string.fcm_info_description_google_api_key
+        ),
+        InfoItem(
+            R.string.fcm_info_label_google_crash_reporting_api_key,
+            R.string.google_crash_reporting_api_key,
+            R.string.fcm_info_description_google_crash_reporting_api_key
+        ),
+        InfoItem(
+            R.string.fcm_info_label_gcm_default_sender_id,
+            R.string.gcm_defaultSenderId,
+            R.string.fcm_info_description_gcm_default_sender_id
+        ),
+        InfoItem(
+            R.string.fcm_info_label_default_web_client_id,
+            R.string.default_web_client_id,
+            R.string.fcm_info_description_default_web_client_id
+        )
     )
 
     override fun onCleared() {

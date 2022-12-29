@@ -19,7 +19,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    android:animateLayoutChanges="true">
 
     <TextView
         android:id="@+id/labelView"
@@ -34,5 +35,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelView"
         tools:text="Value" />
+
+    <TextView
+        android:id="@+id/descriptionView"
+        style="@style/AppTheme.FCM.Info.Description"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valueView" />
+
+    <CheckedTextView
+        android:id="@+id/expandView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:checkMark="@drawable/expand_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

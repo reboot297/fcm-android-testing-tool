@@ -37,13 +37,28 @@
     <string name="about_license_value" translatable="false">https://github.com/reboot297/fcm-android-testing-tool/blob/main/LICENSE</string>
     <string name="about_description_value">This application is designed to check if you have received FCM notifications. To test FCM for your application, compile the source code from github with your "package name" and "google-services.json" file and install the apk on the device.</string>
 
-    <string name="fcm_info_registration_token_label">Registration Token:</string>
-    <string name="fcm_info_project_id">Project Id:</string>
-    <string name="fcm_info_google_storage_bucket">Google storage bucket:</string>
-    <string name="fcm_info_google_app_id">Google App ID:</string>
-    <string name="fcm_info_google_api_key">Google API Key:</string>
-    <string name="fcm_info_google_crash_reporting_api_key">Google crash reporting api key:</string>
-    <string name="fcm_info_gcm_default_sender_id">GCM default sender id:</string>
-    <string name="fcm_info_default_web_client_id">Default web client id:</string>
+    <string name="fcm_info_label_registration_token">Registration Token:</string>
+    <string name="fcm_info_description_registration_token"></string>
+
+    <string name="fcm_info_label_project_id">Project Id:</string>
+    <string name="fcm_info_description_project_id">A user-assigned unique identifier for your Firebase project. This identifier may appear in URLs or names for some Firebase resources, but it should generally be treated as a convenience alias to reference your project.</string>
+
+    <string name="fcm_info_label_google_storage_bucket">Google storage bucket:</string>
+    <string name="fcm_info_description_google_storage_bucket"></string>
+
+    <string name="fcm_info_label_google_app_id">Google App ID:</string>
+    <string name="fcm_info_description_google_app_id">Use this number to identify your app when you contact Firebase support.</string>
+
+    <string name="fcm_info_label_google_api_key">Google API Key:</string>
+    <string name="fcm_info_description_google_api_key"></string>
+
+    <string name="fcm_info_label_google_crash_reporting_api_key">Google crash reporting api key:</string>
+    <string name="fcm_info_description_google_crash_reporting_api_key"></string>
+
+    <string name="fcm_info_label_gcm_default_sender_id">GCM default sender id:</string>
+    <string name="fcm_info_description_gcm_default_sender_id"></string>
+
+    <string name="fcm_info_label_default_web_client_id">Default web client id:</string>
+    <string name="fcm_info_description_default_web_client_id"></string>
 
 </resources>

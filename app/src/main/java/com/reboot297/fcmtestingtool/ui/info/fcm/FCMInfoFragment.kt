@@ -23,6 +23,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.reboot297.fcmtestingtool.databinding.FragmentFcmInfoBinding
+import com.reboot297.fcmtestingtool.ui.info.InfoAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -35,7 +36,7 @@ class FCMInfoFragment : Fragment() {
     private val binding: FragmentFcmInfoBinding get() = _binding!!
 
     private val viewModel: FCMInfoViewModel by viewModels()
-    private val adapter = FCMInfoAdapter()
+    private val adapter = InfoAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package com.reboot297.fcmtestingtool.ui.info.fcm
+package com.reboot297.fcmtestingtool.ui.info
 
 import androidx.annotation.StringRes
 
 /**
- * Model to display fcm-info items on UI.
+ * Model to display info items on UI.
  *
  * @param label label for the field
  * @param value value of the field, It can be string resource or string
+ * @param description description of the field
  */
-data class FCMInfo(@StringRes val label: Int, val value: Any)
+data class InfoItem(@StringRes val label: Int, val value: Any, @StringRes val description: Int)

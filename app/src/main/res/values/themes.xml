@@ -78,4 +78,8 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="AppTheme.FCM.Info.Description" parent="AppTheme.Base.Value">
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>
