@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-package com.reboot297.fcmtestingtool.ui.info.app
+package com.reboot297.fcmtestingtool.ui.info.device
 
 import androidx.fragment.app.viewModels
 import com.reboot297.fcmtestingtool.ui.info.base.BaseInfoFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
- * Display settings info about the application.
+ * Display device info.
  */
 @AndroidEntryPoint
-class AppInfoFragment : BaseInfoFragment() {
-    override val viewModel: AppInfoViewModel by viewModels()
+class DeviceInfoFragment : BaseInfoFragment() {
+    override val viewModel: DeviceInfoViewModel by viewModels()
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.listenConnectionUpdates()
+    }
 }

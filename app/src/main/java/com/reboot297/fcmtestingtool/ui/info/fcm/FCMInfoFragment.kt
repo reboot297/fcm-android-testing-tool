@@ -16,8 +16,6 @@
 
 package com.reboot297.fcmtestingtool.ui.info.fcm
 
-import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.viewModels
 import com.reboot297.fcmtestingtool.ui.info.base.BaseInfoFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,11 +26,5 @@ import dagger.hilt.android.AndroidEntryPoint
  */
 @AndroidEntryPoint
 class FCMInfoFragment : BaseInfoFragment() {
-    private val viewModel: FCMInfoViewModel by viewModels()
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewModel.itemsLiveData.observe(viewLifecycleOwner) { adapter.submitList(it) }
-        viewModel.loadItems()
-    }
+    override val viewModel: FCMInfoViewModel by viewModels()
 }

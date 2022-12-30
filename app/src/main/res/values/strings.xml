@@ -24,6 +24,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_app_info">App Info</string>
+    <string name="menu_device_info">Device Info</string>
     <string name="menu_fcm_info">FCM Info</string>
     <string name="menu_about">About…</string>
 
@@ -42,32 +43,30 @@
 
     <string name="app_info_label_package_name">Package Name:</string>
     <string name="app_info_description_package_name"></string>
-
     <string name="app_info_label_sha_certificate">SHA Certificate:</string>
     <string name="app_info_description_sha_certificate"></string>
 
     <string name="fcm_info_label_registration_token">Registration Token:</string>
     <string name="fcm_info_description_registration_token"></string>
-
     <string name="fcm_info_label_project_id">Project Id:</string>
     <string name="fcm_info_description_project_id">A user-assigned unique identifier for your Firebase project. This identifier may appear in URLs or names for some Firebase resources, but it should generally be treated as a convenience alias to reference your project.</string>
-
     <string name="fcm_info_label_google_storage_bucket">Google storage bucket:</string>
     <string name="fcm_info_description_google_storage_bucket"></string>
-
     <string name="fcm_info_label_google_app_id">Google App ID:</string>
     <string name="fcm_info_description_google_app_id">Use this number to identify your app when you contact Firebase support.</string>
-
     <string name="fcm_info_label_google_api_key">Google API Key:</string>
     <string name="fcm_info_description_google_api_key"></string>
-
     <string name="fcm_info_label_google_crash_reporting_api_key">Google crash reporting api key:</string>
     <string name="fcm_info_description_google_crash_reporting_api_key"></string>
-
     <string name="fcm_info_label_gcm_default_sender_id">GCM default sender id:</string>
     <string name="fcm_info_description_gcm_default_sender_id"></string>
-
     <string name="fcm_info_label_default_web_client_id">Default web client id:</string>
     <string name="fcm_info_description_default_web_client_id"></string>
+
+    <string name="device_info_label_network_status">Network Status:</string>
+    <string name="device_info_description_network_status"></string>
+    <string name="device_info_value_network_status_wifi">Wifi</string>
+    <string name="device_info_value_network_status_mobile">Mobile</string>
+    <string name="device_info_value_network_status_off">Offline</string>
 
 </resources>

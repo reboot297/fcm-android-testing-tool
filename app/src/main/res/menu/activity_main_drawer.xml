@@ -32,5 +32,9 @@
             android:id="@+id/nav_app_info"
             android:icon="@drawable/ic_menu_settings_applications"
             android:title="@string/menu_app_info" />
+        <item
+            android:id="@+id/nav_device_info"
+            android:icon="@drawable/ic_menu_device_settings"
+            android:title="@string/menu_device_info" />
     </group>
 </menu>

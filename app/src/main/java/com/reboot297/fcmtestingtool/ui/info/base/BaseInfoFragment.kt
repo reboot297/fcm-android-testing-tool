@@ -31,6 +31,8 @@ abstract class BaseInfoFragment : Fragment() {
     private var _binding: FragmentInfoBinding? = null
     private val binding: FragmentInfoBinding get() = _binding!!
 
+    abstract val viewModel: BaseInfoViewModel
+
     @Inject
     lateinit var adapter: InfoAdapter
 
@@ -46,6 +48,8 @@ abstract class BaseInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.infoListView.adapter = adapter
+        viewModel.itemsLiveData.observe(viewLifecycleOwner) { adapter.submitList(it) }
+        viewModel.loadItems()
     }
 
     override fun onDestroyView() {
