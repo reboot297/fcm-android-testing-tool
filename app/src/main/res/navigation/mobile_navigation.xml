@@ -49,4 +49,10 @@
         android:name="com.reboot297.fcmtestingtool.ui.info.fcm.FCMInfoFragment"
         android:label="@string/menu_fcm_info"
         tools:layout="@layout/fragment_info" />
+
+    <fragment
+        android:id="@+id/nav_fcm_options"
+        android:name="com.reboot297.fcmtestingtool.ui.options.fcm.FCMOptionsFragment"
+        android:label="@string/menu_fcm_options"
+        tools:layout="@layout/fragment_fcm_options" />
 </navigation>

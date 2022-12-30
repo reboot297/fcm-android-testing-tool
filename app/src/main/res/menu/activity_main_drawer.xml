@@ -29,6 +29,10 @@
             android:icon="@drawable/ic_menu_cloud"
             android:title="@string/menu_fcm_info" />
         <item
+            android:id="@+id/nav_fcm_options"
+            android:icon="@drawable/ic_menu_cloud"
+            android:title="@string/menu_fcm_options" />
+        <item
             android:id="@+id/nav_app_info"
             android:icon="@drawable/ic_menu_settings_applications"
             android:title="@string/menu_app_info" />

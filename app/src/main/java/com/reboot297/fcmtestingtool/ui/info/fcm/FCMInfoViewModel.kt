@@ -16,11 +16,9 @@
 
 package com.reboot297.fcmtestingtool.ui.info.fcm
 
-import android.content.SharedPreferences
 import com.reboot297.fcmtestingtool.R
 import com.reboot297.fcmtestingtool.ui.info.base.BaseInfoViewModel
 import com.reboot297.fcmtestingtool.ui.info.base.InfoItem
-import com.reboot297.fcmtestingtool.utils.SharedPreferenceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -28,32 +26,12 @@ import javax.inject.Inject
  * ViewModel for the screen with fcm info.
  */
 @HiltViewModel
-class FCMInfoViewModel @Inject constructor(
-    private val sharedPreferenceManager: SharedPreferenceManager,
-) : BaseInfoViewModel(), SharedPreferences.OnSharedPreferenceChangeListener {
-
-    init {
-        sharedPreferenceManager.registerListener(this)
-    }
-
-    /**
-     * Update UI if fcm token was changed.
-     */
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        if (SharedPreferenceManager.KEY_FCM_TOKEN == key) {
-            loadItems()
-        }
-    }
+class FCMInfoViewModel @Inject constructor() : BaseInfoViewModel() {
 
     /**
      * Generate list of items.
      */
     override fun generateFields() = listOf(
-        InfoItem(
-            R.string.fcm_info_label_registration_token,
-            sharedPreferenceManager.getToken() ?: "",
-            R.string.fcm_info_description_registration_token
-        ),
         InfoItem(
             R.string.fcm_info_label_project_id,
             R.string.project_id,
@@ -90,9 +68,4 @@ class FCMInfoViewModel @Inject constructor(
             R.string.fcm_info_description_default_web_client_id
         )
     )
-
-    override fun onCleared() {
-        sharedPreferenceManager.unRegisterListener(this)
-        super.onCleared()
-    }
 }

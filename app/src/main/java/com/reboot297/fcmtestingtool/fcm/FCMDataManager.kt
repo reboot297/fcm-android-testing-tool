@@ -50,4 +50,30 @@ class FCMDataManager @Inject constructor() {
                 }
             )
     }
+
+    /**
+     * Determines whether FCM auto-initialization is enabled or disabled.
+     */
+    fun isAutoInitEnabled() = FirebaseMessaging.getInstance().isAutoInitEnabled
+
+    /**
+     * Enables or disables auto-initialization of Firebase Cloud Messaging.
+     */
+    fun setAutoInitEnabled(enable: Boolean) {
+        FirebaseMessaging.getInstance().isAutoInitEnabled = enable
+    }
+
+    /**
+     * Delete Token.
+     */
+    fun deleteToken() {
+        FirebaseMessaging.getInstance().deleteToken().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                Log.d("FCM", "Token successfully deleted")
+                sharedPreferenceManager.saveToken("")
+            } else {
+                Log.e("FCM", "Token was not deleted")
+            }
+        }
+    }
 }

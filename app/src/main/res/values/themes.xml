@@ -82,4 +82,16 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="AppTheme.Options.Label" parent="AppTheme.Base.Label">
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="AppTheme.Options.Value" parent="AppTheme.Base.Value">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTheme.Options.Description" parent="AppTheme.Base.Value">
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

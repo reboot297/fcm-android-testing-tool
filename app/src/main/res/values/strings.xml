@@ -26,6 +26,7 @@
     <string name="menu_app_info">App Info</string>
     <string name="menu_device_info">Device Info</string>
     <string name="menu_fcm_info">FCM Info</string>
+    <string name="menu_fcm_options">FCM Options</string>
     <string name="menu_about">About…</string>
 
     <string name="about_app_version_label">Version:</string>
@@ -40,14 +41,13 @@
     <string name="about_description_value">This application is designed to check if you have received FCM notifications. To test FCM for your application, compile the source code from github with your "package name" and "google-services.json" file and install the apk on the device.</string>
 
     <string name="content_description_share">Share</string>
+    <string name="content_description_delete">Delete</string>
 
     <string name="app_info_label_package_name">Package Name:</string>
     <string name="app_info_description_package_name"></string>
     <string name="app_info_label_sha_certificate">SHA Certificate:</string>
     <string name="app_info_description_sha_certificate"></string>
 
-    <string name="fcm_info_label_registration_token">Registration Token:</string>
-    <string name="fcm_info_description_registration_token"></string>
     <string name="fcm_info_label_project_id">Project Id:</string>
     <string name="fcm_info_description_project_id">A user-assigned unique identifier for your Firebase project. This identifier may appear in URLs or names for some Firebase resources, but it should generally be treated as a convenience alias to reference your project.</string>
     <string name="fcm_info_label_google_storage_bucket">Google storage bucket:</string>
@@ -69,4 +69,8 @@
     <string name="device_info_value_network_status_mobile">Mobile</string>
     <string name="device_info_value_network_status_off">Offline</string>
 
+    <string name="fcm_options_label_is_auto_init_enabled">isAutoInitEnabled: </string>
+    <string name="fcm_options_description_is_auto_init_enabled">Determines whether FCM auto-initialization is enabled or disabled. When enabled, Firebase Cloud Messaging generates a registration token on app startup if there is no valid one (see getToken) and periodically sends data to the Firebase backend to validate the token. This setting is persisted across app restarts and overrides the setting specified in your manifest. </string>
+    <string name="fcm_options_label_registration_token">Registration Token:</string>
+    <string name="fcm_options_description_registration_token"></string>
 </resources>
